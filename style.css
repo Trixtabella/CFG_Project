@@ -57,3 +57,59 @@ color: #ffc857;}
 .icon-button:hover {
   background-color: #ffc857; 
 }
+
+#quoteImage {
+  display: none;
+}
+
+
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.quote-container {
+  margin-bottom: 20px;
+}
+
+#quote {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#author,
+#book {
+  font-style: italic;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button-container button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-container button:hover {
+  background-color: #2980b9;
+}
+
