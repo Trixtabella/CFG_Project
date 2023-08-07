@@ -38,33 +38,27 @@ color: #ffc857;}
 .person:hover {
     transform: scale(1.1);
 }
-/* Open book button  */
-.open-book-button {
+
+/* book button to project  */
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    width: 100px;
-    height: 60px;
-    background-color: #eee;
-    border: 2px solid #ccc;
-    position: relative;
-    cursor: pointer;
-}
-.open-book-button .book-left, .open-book-button .book-right {
-    position: absolute;
-    top: 0;
-    width: 0;
-    height: 0;
-    border: 30px solid transparent;
-    cursor: pointer;
+    height: 100vh;
+    margin: 0;
 }
 
-.open-book-button .book-left {
-    border-right: 30px solid #fff;
-    left: 0;
+/* Book icon button */
+.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 25%;
+    margin: 0 auto; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
 }
-.open-book-button .book-right {
-    border-left: 30px solid #fff;
-    right: 0;
-}
+
