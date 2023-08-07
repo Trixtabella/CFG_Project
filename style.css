@@ -14,7 +14,7 @@ body {
     text-align: center;
     transition: transform 0.3s;
     max-width: 250px;
-    margin: 0 20px; /* Add some spacing between each person */
+    margin: 0 20px; 
 
 }
 
@@ -40,7 +40,7 @@ color: #ffc857;}
     transform: scale(1.1);
 }
 
-/* New CSS for the icon button */
+/* Icon button */
 .icon-button {
   display: flex;
   justify-content: center;
@@ -50,10 +50,10 @@ color: #ffc857;}
   border-radius: 50%;
   margin: 10% auto; /* Center the button */
   cursor: pointer;
-  transition: background-color 0.3s; /* Add a smooth transition effect */
+  transition: background-color 0.3s; /* transition effect */
 }
 
-/* Optional: Change button color on hover */
+/*Change button color on hover */
 .icon-button:hover {
-  background-color: #ffc857; /* Change the background color on hover */
+  background-color: #ffc857; 
 }
