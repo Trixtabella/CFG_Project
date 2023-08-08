@@ -22,12 +22,17 @@ h2{
   color: #db3a34;
   font-size: 30;
   font-family: 'Tektur', cursive;
-  text-decoration: bolder;
 }
 
 p{
   font-family: 'Tektur', cursive;
-color: #ffc857;}
+  color: #ffc857;}
+
+blockquote{
+  font-family: 'Tektur', cursive;
+  color: #f8dad8;
+  text-shadow: #1e6a81;
+}
 
 .person img {
     border-radius: 50%;
@@ -76,7 +81,8 @@ color: #ffc857;}
 h1 {
   margin-bottom: 20px;
   font-family: 'Tektur', cursive;
-  text-decoration: bolder;
+  color: #ffc857;
+  
 }
 
 .quote-container {
