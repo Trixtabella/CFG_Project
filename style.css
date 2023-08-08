@@ -68,13 +68,15 @@ color: #ffc857;}
   max-width: 500px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #1e6a81;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   margin-bottom: 20px;
+  font-family: 'Tektur', cursive;
+  text-decoration: bolder;
 }
 
 .quote-container {
@@ -102,7 +104,7 @@ h1 {
   margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #3498db;
+  background-color: #db3a34;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -110,6 +112,6 @@ h1 {
 }
 
 .button-container button:hover {
-  background-color: #2980b9;
+  background-color: #ca3d38;;
 }
 
