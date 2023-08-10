@@ -56,56 +56,64 @@ function generateQuote(genre) {
   document.getElementById("book").textContent = quote.book ? `- ${quote.book}` : "";
 }
 
-document.getElementById("fantasyBtn").addEventListener("click", function() {
+document.getElementById("fantasyBtn").addEventListener("click", function () {
   generateQuote("fantasy");
 });
 
-document.getElementById("selfImprovementBtn").addEventListener("click", function() {
+document.getElementById("selfImprovementBtn").addEventListener("click", function () {
   generateQuote("selfImprovement");
 });
 
-document.getElementById("romanceBtn").addEventListener("click", function() {
+document.getElementById("romanceBtn").addEventListener("click", function () {
   generateQuote("romance");
 });
-
 
 const addButtons = document.getElementsByClassName("plus-button");
 const quoteDisplay = document.getElementById('quoteDisplay');
 
 function saveGeneratedQuote(quote) {
-const savedQuoteParagraph = document.createElement('p');
-savedQuoteParagraph.textContent = `"${quote}"`;
-quoteDisplay.appendChild(savedQuoteParagraph);
+  const quoteContainer = document.createElement('div');
+  quoteContainer.classList.add('saved-quote');
+
+  const savedQuoteParagraph = document.createElement('p');
+  savedQuoteParagraph.textContent = `"${quote}"`;
+
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'Remove';
+  removeButton.classList.add('remove-button');
+
+  quoteContainer.appendChild(savedQuoteParagraph);
+  quoteContainer.appendChild(removeButton);
+  quoteDisplay.appendChild(quoteContainer);
+
+  removeButton.addEventListener('click', () => {
+    quoteContainer.remove();
+    
+    const savedQuotes = JSON.parse(localStorage.getItem('savedQuotes')) || [];
+    const updatedSavedQuotes = savedQuotes.filter(q => q !== quote);
+    localStorage.setItem('savedQuotes', JSON.stringify(updatedSavedQuotes));
+  });
+}
+
+function loadSavedQuotes() {
+  const savedQuotes = JSON.parse(localStorage.getItem('savedQuotes')) || [];
+
+  for (const savedQuote of savedQuotes) {
+    saveGeneratedQuote(savedQuote);
+  }
 }
 
 for (const addButton of addButtons) {
-addButton.addEventListener('click', () => {
-  const generatedQuote = document.getElementById("quote").textContent;
-  if (generatedQuote.trim() !== '') {
-    saveGeneratedQuote(generatedQuote);
-  }
-});
+  addButton.addEventListener('click', () => {
+    const generatedQuote = document.getElementById("quote").textContent;
+    if (generatedQuote.trim() !== '') {
+      saveGeneratedQuote(generatedQuote);
+      
+      const savedQuotes = JSON.parse(localStorage.getItem('savedQuotes')) || [];
+      savedQuotes.push(generatedQuote);
+      localStorage.setItem('savedQuotes', JSON.stringify(savedQuotes));
+    }
+  });
 }
 
-function saveGeneratedQuote(quote) {
-
-const quoteContainer = document.createElement('div');
-quoteContainer.classList.add('saved-quote');
-
-const savedQuoteParagraph = document.createElement('p');
-savedQuoteParagraph.textContent = `"${quote}"`;
-
-const removeButton = document.createElement('button');
-removeButton.textContent = 'Remove';
-removeButton.classList.add('remove-button');
-
-
-quoteContainer.appendChild(savedQuoteParagraph);
-quoteContainer.appendChild(removeButton);
-quoteDisplay.appendChild(quoteContainer);
-
-// Add event listener to remove the quote when the remove button is clicked
-removeButton.addEventListener('click', () => {
-  quoteContainer.remove();
-});
-}
+window.addEventListener('load', loadSavedQuotes);
